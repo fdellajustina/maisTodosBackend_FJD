@@ -7,7 +7,7 @@ from flask import Flask, render_template, g, request, redirect
 app = Flask(__name__)
 ##############################
 
-DATABASE = './database/teste.db'
+DATABASE = './database/maisTodosCreditCard.db'
 
 from database import Database
 

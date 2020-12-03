@@ -1,0 +1,111 @@
+#page-landing{
+    min-height: 100vh;
+    text-align: center;
+    background: linear-gradient(20deg, #FFFFFF 50%, #5A4E97 50%) no-repeat; 
+    display: flex;  /*Se nao tiver esse display:flex nao é possivel modificar as caracteristicas da box container*/
+}
+
+#container {
+    margin: auto;
+    width: min(90%, 112rem); /*vai procurar o minimo entre 90% e 112rem. Serve para alinhar os itens dentro do container para ter as margens*/
+}
+
+.location, h1, .visit p {
+    height: 16vh;
+}
+
+#logo {
+    animation-delay: 50ms;
+}
+
+.location {
+    animation-delay: 100ms;
+}
+
+main h1 {
+    animation-delay: 150ms;
+    color:#5A4E97;
+    font-size: 0.4rem;
+}
+
+.visit p {
+    animation-delay: 200ms;
+    color:#5A4E97;
+}
+
+/*usada para customizar a seta que vai direcionar para a próxima página*/
+.visit a {
+    width: 8rem;
+    height: 8rem;
+    background: #5A4E97;
+    border: none;
+    border-radius: 3rem;  /*arredonda as bordas do ratangulo*/
+    display: flex;
+    align-items: center;      /*centraliza horizontalmente*/
+    justify-content: center;  /*centraliza verticalmente*/
+    margin: auto;
+    transition: background 200ms; /*com isso o hover vai transicionar de maneira suave*/
+    
+    animation-delay: 250ms;  /* define um delay para mostrar o texto (faz parte da animacao) */
+}
+
+.visit a:hover { /*aqui estamos dizendo procura no visite o "a" quando ele estiver no estado hover, isto é, quando o mouse estiver sobre o botao*/
+    background: #98D41E;
+}
+
+/*desktop version*/
+/*
+1. o que está entre () significa a regra para que o css seja aplicado, exemplo: (min-width: 760px) está dizendo, se a largura minima for de 760px para cima aplique as regras entre {}
+2. para que a aplicacao do @media funcione é necessário ter no index.html a tag <meta name="viewport" content="width=device-width, initial-scale=1.0">
+3. aqui iremos definir as regras de posicionamento dos elementos da pagina
+*/
+@media (min-width: 760px) {
+    
+    /*Adiciona a imagem de plano de fundo*/
+    #container{
+        padding: 5rem 2rem; /*adiciona um preenchimento interno na caixa container para que a imagem nao fique cortada*/
+        /*shorthand background: image no-repeat position / size */
+        /*background: url("../images/maisTodosBackground.jpeg") no-repeat 95% / clamp(70rem, 90vw, 110rem); */
+    }
+    
+    header {
+        display: flex; /*estou dizendo que os elementos DENTRO do header serao do tipo flex (ficarao um do lado do outro)
+        align-items: center; /*tenta alinhar a imagem com o texto da localizacao (pagina inicial). Mas sozinha nao vai conseguir, precisa definir ainda .location, h1, .visit p {} logo abaixo mudando o height*/
+        justify-content: space-between; /*essa propriedade so funciona quando temos display: flex; ou display: grid; definidas e ela faz as box ficarem uma de cada lado*/
+    }
+    
+    .location, h1, .visit p {
+        height: initial;  /*define o height com os valores iniciais (antes mesmo de aplicar o css. Teremos tudo alinhado agora)*/
+        text-align: initial;
+    }
+    
+    .location {
+        text-align: right;
+        font-size: 2.4rem;
+        line-height: 1.5;
+    }
+    
+    main h1 {
+        font-size: clamp(2rem, 6vw, 6.4rem); /*essa funcao clamp tem o minimo valor, valor desejado e o máximo valor que pode ser usado*/
+        font-weight: bold;
+        width: min(550px, 100%);  /*limite de largura no texto*/
+        line-height: .88;  /*espacamento entre as linhas do texto (aqui estamos deixando mais proximas)*/
+        margin: clamp(30%, 9vh, 12%) 0 4rem; /* topo clamp(), nas laterais 0, embaixo 1px */
+    }
+    
+    .visit {
+        display: flex;
+        align-content: center;
+        justify-content: space-between
+    }
+    
+    .visit p {
+        line-height: 1.5;
+        width: clamp(50rem, 20vw, 30rem);
+        font-size: 2.4rem;
+    }
+    
+    .visit a {
+        margin: initial;
+    }
+}

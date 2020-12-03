@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="pt_BR">
+    <head>
+       <meta charset="UTF-8">
+
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+       <title>Localize um orfanato | Happy </title>
+       <link rel="icon" href="/static/images/logo-icon.png">
+
+       <link rel="stylesheet" href="/static/css/main.css">
+       <link rel="stylesheet" href="/static/css/credit-cards.css">
+       <link rel="stylesheet" href="/static/css/animations.css">
+
+       <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+       
+    </head>
+
+    <body>
+        <div id="page-orphanages">
+            <aside class="animate-right">
+                <header>
+                    <img src="/static/images/map-marker.svg" alt="Happy">
+                    <h2>Escolha um cartão</h2>
+                    <p>Para ver detalhes :) </p>
+                </header>
+                
+                <footer>
+                    <strong>Ribeirão Preto</strong>
+                    <span>São Paulo</span>
+                </footer>
+
+            </aside>
+
+            <div id="credit_card_id" class="animate-appear">
+
+                <table style="width:100%">
+                  <thead>
+                   <tr>
+                     <th>Data de vencimento</th>
+                     <th>Titular do cartão</th>
+                   </tr>
+                  </thead>
+                  <tbody>
+
+                      {% for data in dados %}
+                        <tr onclick="window.location.href='{{ url_for('cardDetail', rowData=data[0]) }}';">
+                          <td>{{ data[1] }}</td>
+                          <td>{{ data[2] }}</td>
+                        </tr>
+                      {% endfor %}
+
+                  </tbody>
+                </table>
+
+                <a class="create-orphanage" href="/cadastrar-cartao" title="Cadastre um novo cartão">
+                    <img src="/static/images/plus.svg" alt="Criar cartão">
+                </a>
+
+            </div>
+
+        </div>
+
+        <script src="/static/scripts/page-orphanages.js"></script>
+    </body>
+</html>

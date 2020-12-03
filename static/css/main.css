@@ -1,0 +1,41 @@
+/*O que é uma regra css?
+    é definida pela propriedade e os atributos.
+
+    Para definir uma propriedade usamos as seguintes definicoes:
+    1. se iniciar com .nome-da-clase a tag html precisa ter uma clase definida <tag class="nome-da-clase">
+    2. se iniciar com #nome-do-id a tag html precisa ter um id definida <tag id="nome-do-id">
+
+    # tipos de tags com os display
+    - display: block
+        - elements: div / h1 / p
+    - display: inline
+        - elements: a / span / strong
+
+    # se difinimos um container para ser do tipo flex, significa que as box que existem dentro dele podem ser alteradas de width e outras propriedades
+*/
+
+/*Para definir configuracoes padrao do navegador. O browser ja vem com algumas pre-definicoes e estamos sobrescrevendo */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box; /*para evitar que ao fazermos padding a largura seja width+padding, nessa caso width sempre será o definido e o paddind ira contar a partir da borda. Foi usado em page-orphanages.css aside. */
+}
+
+/* Usado para definir a unidade basica de rem (1rem=62.5%). Com isso podemo mudar automaticamente em todos os lugares apenas redefinido a font-size do root*/
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    height: 100vh;
+    color: white;
+    background: #ebf2f5;
+}
+
+/* Para usar a fonte nunito precisamos fazer um href no index.html (importando essa fonte) */
+body, input, button, textarea {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    font-weight: 400;
+    font-family: 'Nunito', sans-serif;
+}

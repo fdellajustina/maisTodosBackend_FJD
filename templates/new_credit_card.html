@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="pt_BR">
+    <head>
+       <meta charset="UTF-8">
+
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+       <title>Localize um orfanato | Happy </title>
+       <link rel="icon" href="/static/images/logo-icon.png">
+
+       <link rel="stylesheet" href="/static/css/main.css">
+       <link rel="stylesheet" href="/static/css/animations.css">
+       <link rel="stylesheet" href="/static/css/sidebar.css">
+       <link rel="stylesheet" href="/static/css/form.css">
+       <link rel="stylesheet" href="/static/css/buttons.css">
+       <link rel="stylesheet" href="/static/css/page-register-cards.css">
+
+       <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+       
+    </head>
+
+    <body>
+          <div id="page-create-orphanage">
+            <aside class="animate-right sidebar">
+                <img src="/static/images/map-marker.svg" alt="maisTodos">
+                <footer>
+                    <button onclick="history.back()">
+                        <img src="/static/images/arrow-back.svg" alt="Voltar">
+                    </button>
+                </footer>
+
+            </aside>
+
+            <main class="main animate-appear width-sidebar">
+
+              <form role="form" method="POST">
+                <fieldset>
+                  <legend>Dados</legend>
+
+                  <div class="input-block">
+                     <label for="name">Data de vencimento</label>
+                     <input type="datetime-local" name="exp_date" size="40" placeholder="Vencimento" required>
+                  </div>
+
+
+                  <div class="input-block">
+                     <label for="name">Titular do cartão</label>
+                     <input type="text" name="holder" size="150" placeholder="Titular do cartão" required>
+                  </div>
+
+
+                  <div class="input-block">
+                     <label for="name">Número do cartão</label>
+                     <input type="number" name="number" size="16" placeholder="Número do cartão" required>
+                  </div>
+
+                  <div class="input-block">
+                     <label for="name">CVV</label>
+                     <input type="number" name="cvv" size="4" placeholder="CVV" required>
+                  </div>
+
+                  <button type="submit" class="primary-buttom">
+                    Confirmar
+                  </button>
+
+                </fieldset>
+
+              </form>
+
+            </main>
+
+        </div>
+        
+        <script src="/static/scripts/page-create-orphanage.js"></script>
+    </body>
+</html>

@@ -1,0 +1,166 @@
+#page-orphanages {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    
+}
+
+aside {
+    width: clamp(24rem, 25vw, 44rem);
+    background: linear-gradient(329.54deg, #15B6d6 0%, #5A4E97 100%);
+    padding: clamp(3rem, 5vw, 8rem);
+    
+    /*arrumamos o espaco VERTICAL para ser space-between*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+aside h2 {
+    margin-top: 6.4rem;
+    font: 800 clamp(2rem, 5vw, 3.6rem)/1.1 'Nunito', sans-serif;
+}
+
+aside p {
+    margin-top: 2.4rem;
+    font: 400 1.6rem/1.5 'Nunito', sans-serif;
+}
+
+aside footer p {
+    margin-top: .8rem;
+}
+
+aside footer span {
+    display: block;
+}
+
+aside.sidebar footer button {
+    width: 48px;
+    height: 48px;
+    border: none;
+    background: #98D41E;
+    border-radius: 1.6rem;
+    cursor: pointer;  /*ao passar a mouse por cimada seta a seta do cursor vira uma mão*/
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    transition: backgroud-color 0.2s;
+}
+
+aside.sidebar footer button:hover {
+    background: #5A4E97;
+}
+
+#credit_card_id {
+    width: 100%;
+    height: 100%;
+    font: 400 1.6rem/1.5 'Nunito', sans-serif;
+    margin: 8rem 20rem;
+
+    animation-delay: 200ms;
+}
+
+#credit_card_id table {
+    font: 400 2.6rem/1.5 'Nunito', sans-serif;
+    width: 5%;
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: clamp(13rem, 15vw, 18rem);
+    border-radius: 2rem;
+}
+
+#credit_card_id th {
+    border: 1px solid black;
+    background: #5A4E97; 
+    color:#FFFFFF;
+}
+
+#credit_card_id td {
+    color:#5A4E97;
+    padding: clamp(1rem, 1.5vw, 1.8rem);
+}
+
+#credit_card_id tr:nth-child(even) {
+  background-color: #D3D3D3;
+}
+
+#credit_card_id tr.blueel {
+  background-color: blue;
+}
+
+/*Buttom*/
+a.create-orphanage {
+    position: absolute;
+    /* top/bottom/right/left só funciona se eu definir o position:absolute*/
+    right: 4rem;
+    bottom: 4rem;
+    
+    z-index: 1000; /*coloca o botão numa camada superior (para que ele não fique escondido atras do mapa) */
+    
+    width: 6.4rem;
+    height: 6.4rem;
+
+    background: #5A4E97;
+    border: 0;
+    border-radius: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    transition: background-color 200ms;
+        
+}
+
+a.create-orphanage:hover {
+    background: #98D41E;
+}
+
+/*Conteudo do maps leaflet */
+.leaflet-popup-content-wrapper {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+}
+
+.leaflet-popup-content {
+    color: #0089a5;
+    margin: .8rem 1.2rem;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*seta para direita no popup*/
+.leaflet-popup-content a {
+    width: 4rem;
+    height: 4rem;
+    background: #15c3d6;
+    box-shadow: 17.2868px 27.65px 41.48px rgba(23, 142, 166, 0.16);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    transition: background-color .2s;
+}
+
+.leaflet-popup-content a:hover {
+    background: #17d6eb
+}
+
+/*Para retirar a setinha para baixo do popup*/
+.leaflet-popup-tip {
+    display: none;    
+}
+
+/*Para alterar a fonte*/
+.leaflet-container {
+    font-family: 'Nunito', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    
+    z-index: 0; /*coloca o mapa na camada 5 (pq o botao (definido em a.create-orphanage) ficou na camada 10, isto é, na frente para poder ser visualizado)*/
+}
